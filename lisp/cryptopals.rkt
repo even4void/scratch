@@ -8,6 +8,7 @@
 ;; -----
 
 ;; Problem 1
+;; We need something like Python's unhexlify or ''.decode("hex").
 (require file/sha1)
 (require net/base64)
 
@@ -16,6 +17,11 @@
 (base64-encode (hex-string->bytes s))
 
 ;; Problem 2
+;; We need to "xor" the integer value of each character and return the character string
+;; corresponding to the ASCII code.
+;;
+;; (define curr (bitwise-xor #x1C #x68))
+;; (bytes->hex-string (integer->integer-bytes curr 1 #t))
 (define a "1c0111001f010100061a024b53535009181c")
 (define b "686974207468652062756c6c277320657965")
 
@@ -28,7 +34,10 @@
 (define aa (split-pairs (string->list a)))
 (define bb (split-pairs (string->list b)))
 
-; or
-(bytes->list (hex-string->bytes a))
+
+(define hx1 (hex-string->bytes (list->string (car aa))))
+(define hx2 (hex-string->bytes (list->string (car bb))))
+(define curr (bitwise-xor hx1 hx2))
+(bytes->hex-string (integer->integer-bytes curr 1 #t))
 
 (define zip (lambda (x y) (map list x y)))
