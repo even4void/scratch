@@ -1,5 +1,6 @@
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void npartitions(int n, int *alpha, int *beta) {
   int nmax = 100;
@@ -16,8 +17,9 @@ void npartitions(int n, int *alpha, int *beta) {
   for (m = 2; m < n; ++m) {
     for (k = m; k < n; ++k) {
       s = b[k] + b[k - m];
-      b[k] = n % base;
-      a[k] = a[k] + a[k - m] + s % base;
+      b[k] = s % base;
+      div_t q = div(s, base);
+      a[k] = a[k] + a[k - m] + q.quot;
     }
   }
 

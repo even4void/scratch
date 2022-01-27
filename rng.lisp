@@ -11,4 +11,8 @@
 (defun rnorm (mean std)
   (+ (* (box-muller) std) mean))
 
-(rnorm 10 2)
+(defun take (n gen)
+  (loop :repeat n
+        :collect (funcall gen)))
+
+(take 100 (rnorm 10 2))
