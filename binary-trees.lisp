@@ -14,17 +14,17 @@
     ((null list) nil)
     ((atom list) (make-node :value list))
     ((listp list) (destructuring-bind (v l r) list
-                    (make-node :value v
-                               :left (tree l)
-                               :right (tree r))))))
+		    (make-node :value v
+			       :left (tree l)
+			       :right (tree r))))))
 
 
 (defparameter *test*
   (tree '(a (b (c nil nil)
-               (d (e nil nil)
-                  (f nil nil)))
-            (g nil
-               (h (i nil nil)
-                  nil)))))
+	       (d (e nil nil)
+		  (f nil nil)))
+	    (g nil
+	       (h (i nil nil)
+		  nil)))))
 
 (princ *test*)

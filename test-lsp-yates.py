@@ -1,5 +1,6 @@
 import os
 import random
+import pytest
 
 # Sattolo algorithm & Co.
 # https://danluu.com/sattolo/
@@ -21,6 +22,7 @@ def sattolo(a):
 
 
 xs = [1, 2, 3, 4, 5, 6, 7]
+
 xs[0] and True
 
 shuffle(xs)

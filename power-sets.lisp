@@ -17,5 +17,3 @@
 ;; (defvar data (repeat (randu *set*) 6))
 
 (mapcar #'(lambda (x) (format nil "~{~a~}" x)) (power-set *set*))
-
-
