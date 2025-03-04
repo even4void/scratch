@@ -5,6 +5,6 @@
     (if (or (zero? n) (null? xs))
         (reverse ys)
         (loop (- n 1) (cdr xs)
-              (cons (car xs) ys)))))
+          (cons (car xs) ys)))))
 
 (take 4 '(1 2 3 4 5))

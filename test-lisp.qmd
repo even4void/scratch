@@ -1,0 +1,21 @@
+---
+title: Hello Wolfram
+author: chl
+jupyter: common-lisp
+---
+
+Trying out to run some Stata code:
+
+```{common-lisp}
+(defun fibonacci (n)
+    (if (<= n 1)
+        1
+        (+ (fibonacci (- n 2)) (fibonacci (- n 1)))))
+```
+
+```{common-lisp}
+(format t "Dumb procedure follows")
+(fibonacci 7)
+```
+
+That's it!
