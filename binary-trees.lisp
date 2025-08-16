@@ -18,7 +18,6 @@
 			       :left (tree l)
 			       :right (tree r))))))
 
-
 (defparameter *test*
   (tree '(a (b (c nil nil)
 	       (d (e nil nil)

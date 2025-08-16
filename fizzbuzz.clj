@@ -8,3 +8,5 @@
         words (map str fizzes buzzes)
         numbers (map str (rest (range)))]
     (take n (map max words numbers))))
+
+(fizzbuzz 100)
