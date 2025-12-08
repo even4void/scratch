@@ -1,10 +1,21 @@
 import os
 import random
-import pytest
 
 # Sattolo algorithm & Co.
 # https://danluu.com/sattolo/
 # This is an extra long comment line to test whether it is highlighted correctly as too
+
+
+def inc(x: int) -> int:
+    return x + 1
+
+
+def test_answer():
+    assert inc(3) == 5
+
+
+def test_answer2():
+    assert inc(4) == 5
 
 
 def shuffle(a: list[int]) -> None:

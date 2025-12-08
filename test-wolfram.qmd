@@ -1,7 +1,10 @@
 ---
 title: Hello Wolfram
 author: chl
-jupyter: wolframlanguage14.1
+jupyter: wolfram
+format:
+  html:
+    code-line-numbers: true
 ---
 
 Trying out to run some Stata code:
