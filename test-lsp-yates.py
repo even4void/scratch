@@ -13,7 +13,6 @@ def inc(x: int) -> int:
 def test_answer():
     assert inc(3) == 5
 
-
 def test_answer2():
     assert inc(4) == 5
 
@@ -27,6 +26,7 @@ def shuffle(a: list[int]) -> None:
 
 def sattolo(a):
     n = length(a)
+
     for i in range(n - 1):
         j = random.randrange(i + 1, n)
         a[i], a[j] = a[j], a[i]
