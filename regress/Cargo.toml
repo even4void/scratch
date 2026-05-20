@@ -1,0 +1,10 @@
+[package]
+name = "rs-regress"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+csv = "1.1"
+ndarray = {version = "0.15", features=["rayon", "serde", "blas"]}
+ndarray-linalg = {version = "0.16", default-features = false}
+blas-src = { version = "0.8", features = ["accelerate"] }
