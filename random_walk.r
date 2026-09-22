@@ -22,8 +22,7 @@ inside_rect <- function(coords, x, y) {
     } else {
       return(FALSE)
     }
-  }
-  else {
+  } else {
     return(FALSE)
   }
 }
@@ -44,15 +43,16 @@ SAVE <- TRUE
 
 for (k in seq(n)) {
   if (SAVE) {
-    png(paste(WD, "rw", formatC(k, digits = 3, flag = "0"), ".png", sep = ""),
-      width = 600, height = 600, type = "cairo-png", res = 150
+    png(
+      paste(WD, "rw", formatC(k, digits = 3, flag = "0"), ".png", sep = ""),
+      width = 600,
+      height = 600,
+      type = "cairo-png",
+      res = 150
     )
   }
   op <- par(mar = rep(0, 4), xpd = NA)
-  plot(0,
-    type = "n", xlim = xs, ylim = ys, xlab = "", ylab = "",
-    axes = FALSE
-  )
+  plot(0, type = "n", xlim = xs, ylim = ys, xlab = "", ylab = "", axes = FALSE)
   rect(rr[1], rr[2], rr[3], rr[4], col = "#B3B3B380", border = NA)
   pchs <- rep(21, size)
   cols <- rep(1, size)

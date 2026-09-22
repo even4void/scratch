@@ -1,0 +1,115 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3689,        107]
+NotebookOptionsPosition[      3157,         91]
+NotebookOutlinePosition[      3547,        107]
+CellTagsIndexPosition[      3504,        104]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"https", ":"}], "//", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"community", ".", "wolfram", ".", "com"}], "/", "t"}], "/", 
+      "data"}], "-", "transformation", "-", "workflows", "-", "wolfram", "-", 
+     "u", "-", 
+     RowBox[{"sessions", "/", "17004"}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"titanic", "=", 
+   RowBox[{"ExampleData", "[", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Dataset\>\"", ",", "\"\<Titanic\>\""}], "}"}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.9989701759067373`*^9, 3.99897017590676*^9}, {
+  3.998970217567359*^9, 3.998970232598844*^9}, {3.9989704464422293`*^9, 
+  3.9989704935206347`*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"1adf429c-1490-4936-a7a7-3ee0ef23b761"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Hold", "[", 
+   RowBox[{
+    RowBox[{"obj", "=", "titanic"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"obj", "=", 
+     RowBox[{"Select", "[", 
+      RowBox[{"obj", ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#1", "[", "\"\<survived\>\"", "]"}], "==", "True"}], 
+        "&"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"obj", "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Join", "[", 
+         RowBox[{
+          RowBox[{"KeyDrop", "[", 
+           RowBox[{"#1", ",", 
+            RowBox[{"{", 
+             RowBox[{"\"\<class\>\"", ",", "\"\<sex\>\""}], "}"}]}], "]"}], ",", 
+          RowBox[{"Association", "[", 
+           RowBox[{
+            RowBox[{"\"\<class\>\"", "->", 
+             RowBox[{"#1", "[", "\"\<class\>\"", "]"}]}], ",", 
+            RowBox[{"\"\<sex\>\"", "->", 
+             RowBox[{"#1", "[", "\"\<sex\>\"", "]"}]}]}], "]"}]}], "]"}], 
+        "&"}], ")"}], "/@", "obj"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"obj", "=", 
+     RowBox[{
+      RowBox[{"ResourceFunction", "[", "\"\<CrossTabulate\>\"", "]"}], "[", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"#1", "[", "\"\<class\>\"", "]"}], ",", 
+           RowBox[{"#1", "[", "\"\<sex\>\"", "]"}]}], "}"}], "&"}], ")"}], "/@",
+        "obj"}], "]"}]}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.998970247717952*^9, 3.9989702966735973`*^9}, 
+   3.9989704154249268`*^9},
+ CellLabel->"In[6]:=",ExpressionUUID->"6b9776f2-0dde-40c9-9c5f-ce44209d2973"],
+
+Cell[BoxData[
+ RowBox[{"ReleaseHold", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.998970332602034*^9, 3.998970335795618*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"2495795c-ddf9-44ad-a22d-a728f5947550"]
+},
+WindowSize->{808, 821},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"15.0 for Mac OS X ARM (64-bit) (July 2, 2026)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a1370420-66b1-41b1-8b20-696672e4cf77"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 792, 20, 70, "Input",ExpressionUUID->"1adf429c-1490-4936-a7a7-3ee0ef23b761"],
+Cell[1349, 42, 1593, 42, 131, "Input",ExpressionUUID->"6b9776f2-0dde-40c9-9c5f-ce44209d2973"],
+Cell[2945, 86, 208, 3, 29, "Input",ExpressionUUID->"2495795c-ddf9-44ad-a22d-a728f5947550"]
+}
+]
+*)
+
