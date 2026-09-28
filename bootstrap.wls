@@ -1,16 +1,28 @@
-BootMeanCI[data_, size_:1000, conf_:0.95] :=
-  Module[{n, bsamples, means, alpha},
-    n = Length[data];
-    bsamples = Table[RandomChoice[data, n], {size}];
-    means = Mean /@ bsamples;
-    alpha = (1 - conf) / 2;
-    Quantile[means, {alpha, 1 - alpha}]
-  ]
+data = {7.05, 2.49, 16.09, 21.3, 19.21, 14.88, 16.41, 0.19, 9.71, 
+  10.18, 8.81, 2.93, 18.11, 22.2, 9.79, 14.74, 4.54, 16.76, 8.46, 
+  24.9}
 
-SeedRandom[42];
-xs = RandomVariate[NormalDistribution[100, 15], 20];
-BootMeanCI[xs, 2000]
+smpl = RandomChoice[data, Length[data]]
+Skewness[data]
+Skewness[smpl]
 
-(* Asymptotic 95% CI follows *)
-Needs["HypothesisTesting`"]
-MeanCI[xs]
+skews = Table[Skewness[RandomChoice[data, Length[data]]], {1000}];
+Histogram[skews]
+StandardDeviation[skews]
+Quantile[skews, {.025, .975}]
+
+gdata = BlockRandom[SeedRandom[1]; 
+   RandomVariate[GammaDistribution[2, 3], 100]];
+Histogram[gdata]
+FindDistributionParameters[gdata, GammaDistribution[\[Alpha], \[Beta]]]
+FindDistributionParameters[RandomChoice[gdata, Length[gdata]],
+ GammaDistribution[\[Alpha], \[Beta]]]
+
+params := {\[Alpha], \[Beta]} /. 
+  FindDistributionParameters[RandomChoice[gdata, Length[gdata]], 
+   GammaDistribution[\[Alpha], \[Beta]]]
+
+ests = Table[params, {100}];
+Mean[ests]
+Correlation[ests] // MatrixForm
+
