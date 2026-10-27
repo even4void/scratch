@@ -1,4 +1,4 @@
-#! / usr / bin / env wolframscript
+#!/usr/bin/env wolframscript
 
 (* ::Package:: *)
 
